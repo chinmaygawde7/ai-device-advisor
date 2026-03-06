@@ -310,6 +310,6 @@ def fetch_device_image(device_type):
     return images.get(device_type, "/static/v2/images/phone.png")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000)
 
 
