@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="/static/v2/loading.css">
+
+</head>
+
+<body>
+
+    <div class="loading-container">
+
+        <h1>Analyzing Your Requirements</h1>
+
+        <div class="loader"></div>
+
+        <div class="analysis">
+
+            <p>✔ Budget optimization</p>
+            <p>✔ Performance analysis</p>
+            <p>✔ Hardware compatibility</p>
+            <p>✔ Market availability</p>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        setTimeout(function () {
+
+            document.getElementById("hidden-form").submit()
+
+        }, 3000)
+
+    </script>
+
+    <form id="hidden-form" action="/recommend" method="post">
+
+        {% for key,value in data.items() %}
+
+        <input type="hidden" name="{{key}}" value="{{value}}">
+
+        {% endfor %}
+
+    </form>
+
+</body>
+
+</html>

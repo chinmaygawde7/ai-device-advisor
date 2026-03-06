@@ -1,7 +1,113 @@
-<h2>Recommended Devices</h2>
+<!DOCTYPE html>
+<html>
 
-<pre>
-{{ result }}
-</pre>
+<head>
 
-<a href="/">Start Again</a>
+    <link rel="stylesheet" href="/static/v2/result.css">
+
+</head>
+
+<body>
+
+    <h1 class="title">Your Recommended Phones</h1>
+
+    <div class="results-container">
+
+        {% for device in devices %}
+
+        <div class="device-card">
+
+            <img src="{{device.image}}" class="device-image" loading="lazy">
+
+            <h2>{{device.name}}</h2>
+
+            <p class="price">{{device.price}}</p>
+
+            <p class="reason">
+                {{device.reason}}
+            </p>
+
+            <div class="specs">
+
+                <span>{{device.specs.processor}}</span>
+                <span>{{device.specs.display}}</span>
+                <span>{{device.specs.battery}}</span>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    <h2 class="comparison-title">Compare Devices</h2>
+
+    <div class="comparison-grid">
+
+        <div class="comparison-row header">
+            <div class="spec-title">Specification</div>
+
+            {% for device in devices %}
+            <div class="device-title">{{device.name}}</div>
+            {% endfor %}
+
+        </div>
+
+        <div class="comparison-row">
+            <div class="spec-title">Processor</div>
+
+            {% for device in devices %}
+            <div class="spec-value">{{device.specs.processor}}</div>
+            {% endfor %}
+
+        </div>
+
+        <div class="comparison-row">
+            <div class="spec-title">Display</div>
+
+            {% for device in devices %}
+            <div class="spec-value">{{device.specs.display}}</div>
+            {% endfor %}
+
+        </div>
+
+        <div class="comparison-row">
+            <div class="spec-title">Battery</div>
+
+            {% for device in devices %}
+            <div class="spec-value">{{device.specs.battery}}</div>
+            {% endfor %}
+
+        </div>
+
+        <div class="comparison-row">
+            <div class="spec-title">RAM</div>
+
+            {% for device in devices %}
+            <div class="spec-value">{{device.specs.ram}}</div>
+            {% endfor %}
+
+        </div>
+
+        <div class="comparison-row">
+            <div class="spec-title">Storage</div>
+
+            {% for device in devices %}
+            <div class="spec-value">{{device.specs.storage}}</div>
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+    <div class="restart">
+
+        <a href="/" class="primary-btn">Start Again</a>
+
+    </div>
+
+
+</body>
+
+</html>

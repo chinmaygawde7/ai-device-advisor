@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="/static/v2/result.css">
+
+</head>
+
+<body>
+
+    <h1>Recommended PC Builds</h1>
+
+    {% for build in builds %}
+
+    <div class="build-section">
+
+        <h2 style="margin-top:40px;">{{build.name}}</h2>
+
+        <div class="pc-grid">
+
+            <div class="pc-card">
+                <h3>🧠 CPU</h3>
+                <p>{{build.cpu.name}}</p>
+                <p class="price">₹ {{build.cpu.price}}</p>
+            </div>
+
+            <div class="pc-card">
+                <h3>🎮 GPU</h3>
+                <p>{{build.gpu.name}}</p>
+                <p class="price">₹ {{build.gpu.price}}</p>
+            </div>
+
+            <div class="pc-card">
+                <h3>🧠 RAM</h3>
+                <p>{{build.ram.name}}</p>
+                <p class="price">₹ {{build.ram.price}}</p>
+            </div>
+
+            <div class="pc-card">
+                <h3>🔌 Motherboard</h3>
+                <p>{{build.motherboard.name}}</p>
+                <p class="price">₹ {{build.motherboard.price}}</p>
+            </div>
+
+            <div class="pc-card">
+                <h3>💾 Storage</h3>
+                <p>{{build.storage.name}}</p>
+                <p class="price">₹ {{build.storage.price}}</p>
+            </div>
+
+            <div class="pc-card">
+                <h3>⚡ PSU</h3>
+                <p>{{build.psu.name}}</p>
+                <p class="price">₹ {{build.psu.price}}</p>
+            </div>
+
+            <div class="pc-card">
+                <h3>🖥 Case</h3>
+                <p>{{build.case.name}}</p>
+                <p class="price">₹ {{build.case.price}}</p>
+            </div>
+
+            <div class="pc-card">
+                <h3>❄ Cooler</h3>
+                <p>{{build.cooler.name}}</p>
+                <p class="price">₹ {{build.cooler.price}}</p>
+            </div>
+
+        </div>
+
+        <div class="total-section">
+
+            <h2>Total Build Cost</h2>
+
+            <h1 class="total-price">₹0</h1>
+
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+    <script>
+
+        function cleanPrice(text) {
+            return parseInt(text.replace(/[^0-9]/g, '')) || 0
+        }
+
+        document.querySelectorAll(".build-section").forEach(section => {
+
+            let prices = section.querySelectorAll(".price")
+
+            let total = 0
+
+            prices.forEach(p => {
+                total += cleanPrice(p.innerText)
+            })
+
+            section.querySelector(".total-price").innerText = "₹ " + total.toLocaleString()
+
+        })
+
+    </script>
+
+    <div style="margin-top:40px;">
+
+        <a href="/pc-build" class="primary-btn">
+            Build Another PC
+        </a>
+
+        <a href="/" class="primary-btn" style="margin-left:15px;">
+            Start Again
+        </a>
+
+    </div>
+
+</body>
+
+</html>

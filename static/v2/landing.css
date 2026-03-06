@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.nav-links a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: auto;
+    opacity: 0.8;
+}
+
+.device-selection {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.device-card {
+    background: #1e293b;
+    padding: 40px;
+    border-radius: 16px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.device-card:hover {
+    transform: translateY(-10px);
+    background: #2563eb;
+}
+
+.icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}

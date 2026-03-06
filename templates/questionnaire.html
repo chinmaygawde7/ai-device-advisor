@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js" defer></script>
+</head>
+
+<body>
+
+    <h2>Find Your Perfect {{device}}</h2>
+
+    <form action="/recommend" method="post">
+
+        <input type="hidden" name="device" value="{{device}}">
+
+        <div class="step active">
+
+            <h3>What's your budget?</h3>
+
+            <select name="budget">
+                <option>20000</option>
+                <option>30000</option>
+                <option>50000</option>
+                <option>80000</option>
+                <option>100000+</option>
+            </select>
+
+            <button type="button" onclick="nextStep()">Next</button>
+
+        </div>
+
+
+        <div class="step">
+
+            <h3>Preferred OS</h3>
+
+            <div class="options">
+
+                <label>
+                    <input type="radio" name="os" value="Android"> Android
+                </label>
+
+                <label>
+                    <input type="radio" name="os" value="iOS"> iOS
+                </label>
+
+                <label>
+                    <input type="radio" name="os" value="No preference"> No preference
+                </label>
+
+            </div>
+
+            <button type="button" onclick="nextStep()">Next</button>
+
+        </div>
+
+
+        <div class="step">
+
+            <h3>Primary Usage</h3>
+
+            <select name="usage">
+                <option>Photography</option>
+                <option>Gaming</option>
+                <option>Productivity</option>
+                <option>Casual usage</option>
+            </select>
+
+            <button type="button" onclick="nextStep()">Next</button>
+
+        </div>
+
+
+        <div class="step">
+
+            <h3>Camera Importance</h3>
+
+            <select name="camera">
+                <option>Low</option>
+                <option>Medium</option>
+                <option>High</option>
+            </select>
+
+            <button type="button" onclick="nextStep()">Next</button>
+
+        </div>
+
+
+        <div class="step">
+
+            <h3>Gaming Importance</h3>
+
+            <select name="gaming">
+                <option>Low</option>
+                <option>Medium</option>
+                <option>High</option>
+            </select>
+
+            <button type="button" onclick="nextStep()">Next</button>
+
+        </div>
+
+
+        <div class="step">
+
+            <h3>Battery Importance</h3>
+
+            <select name="battery">
+                <option>Low</option>
+                <option>Medium</option>
+                <option>High</option>
+            </select>
+
+            <button type="button" onclick="nextStep()">Next</button>
+
+        </div>
+
+
+        <div class="step">
+
+            <h3>Brand Preference</h3>
+
+            <select name="brand">
+                <option>No preference</option>
+                <option>Apple</option>
+                <option>Samsung</option>
+                <option>Google</option>
+                <option>OnePlus</option>
+            </select>
+
+            <button type="submit">Get Recommendation</button>
+
+        </div>
+
+    </form>
+
+</body>
+
+</html>

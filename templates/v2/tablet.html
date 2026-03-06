@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="/static/v2/phone.css">
+    <script src="/static/v2/phone.js" defer></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+
+        <form action="/analyze" method="post">
+
+            <input type="hidden" name="device" value="tablet">
+
+            <!-- STEP 1 -->
+
+            <div class="step active">
+
+                <h2>💰 Budget</h2>
+
+                <div class="card-group">
+
+                    <div class="card" data-value="20000">Under ₹20k</div>
+                    <div class="card" data-value="40000">₹20k - ₹40k</div>
+                    <div class="card" data-value="70000">₹40k - ₹70k</div>
+                    <div class="card" data-value="100000">₹70k+</div>
+
+                </div>
+
+                <input type="hidden" name="budget">
+
+                <button type="button" onclick="nextStep()">Next</button>
+
+            </div>
+
+
+            <!-- STEP 2 -->
+
+            <div class="step">
+
+                <h2>🎯 Primary Use</h2>
+
+                <div class="card-group">
+
+                    <div class="card" data-value="Media consumption">🎬 Movies & Media</div>
+                    <div class="card" data-value="Student use">🎓 Student</div>
+                    <div class="card" data-value="Work and productivity">💻 Work</div>
+                    <div class="card" data-value="Gaming">🎮 Gaming</div>
+                    <div class="card" data-value="Drawing">✏️ Drawing / Design</div>
+
+                </div>
+
+                <input type="hidden" name="usage">
+
+                <button type="button" onclick="nextStep()">Next</button>
+
+            </div>
+
+
+            <!-- STEP 3 -->
+
+            <div class="step">
+
+                <h2>🖥 Screen Size</h2>
+
+                <div class="card-group">
+
+                    <div class="card" data-value="Small tablet">8 inch</div>
+                    <div class="card" data-value="Medium tablet">10-11 inch</div>
+                    <div class="card" data-value="Large tablet">12 inch+</div>
+
+                </div>
+
+                <input type="hidden" name="screen">
+
+                <button type="button" onclick="nextStep()">Next</button>
+
+            </div>
+
+
+            <!-- STEP 4 -->
+
+            <div class="step">
+
+                <h2>⚡ Performance Need</h2>
+
+                <div class="card-group">
+
+                    <div class="card" data-value="Basic performance">Basic</div>
+                    <div class="card" data-value="Balanced performance">Balanced</div>
+                    <div class="card" data-value="High performance">High performance</div>
+
+                </div>
+
+                <input type="hidden" name="performance">
+
+                <button type="button" onclick="nextStep()">Next</button>
+
+            </div>
+
+
+            <!-- STEP 5 -->
+
+            <div class="step">
+
+                <h2>🔋 Battery Importance</h2>
+
+                <div class="card-group">
+
+                    <div class="card" data-value="Low">Low</div>
+                    <div class="card" data-value="Medium">Medium</div>
+                    <div class="card" data-value="High">High</div>
+
+                </div>
+
+                <input type="hidden" name="battery">
+
+                <button type="button" onclick="nextStep()">Next</button>
+
+            </div>
+
+
+            <!-- STEP 6 -->
+
+            <div class="step">
+
+                <h2>📱 Operating System</h2>
+
+                <div class="card-group">
+
+                    <div class="card" data-value="Android">Android</div>
+                    <div class="card" data-value="iPadOS">Apple iPad</div>
+
+                </div>
+
+                <input type="hidden" name="os">
+
+                <button type="submit">Get Recommendation</button>
+
+            </div>
+
+        </form>
+    </div>
+</body>
+
+</html>

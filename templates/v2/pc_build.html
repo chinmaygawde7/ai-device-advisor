@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="/static/v2/phone.css">
+    <script src="/static/v2/phone.js" defer></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+
+        <form action="/analyze" method="post">
+
+            <input type="hidden" name="device" value="pc">
+
+            <!-- STEP 1 -->
+
+            <div class="step active">
+
+                <h2>💰 Budget</h2>
+
+                <div class="card-group">
+
+                    <div class="card" data-value="20000-40000">₹20k - ₹40k</div>
+                    <div class="card" data-value="40000-60000">₹40k - ₹60k</div>
+                    <div class="card" data-value="60000-80000">₹60k - ₹80k</div>
+                    <div class="card" data-value="80000-100000">₹80k - ₹1L</div>
+                    <div class="card" data-value="100000-150000">₹1L - ₹1.5L</div>
+                    <div class="card" data-value="150000-200000">₹1.5L - ₹2L</div>
+                    <div class="card" data-value="200000+">₹2L+</div>
+                </div>
+
+                <input type="hidden" name="budget">
+
+                <button type="button" onclick="nextStep()">Next</button>
+
+            </div>
+
+
+            <!-- STEP 2 -->
+
+            <div class="step">
+
+                <h2>🎯 Primary Usage</h2>
+
+                <div class="card-group">
+
+                    <div class="card" data-value="Gaming">🎮 Gaming</div>
+                    <div class="card" data-value="Content creation">🎬 Content Creation</div>
+                    <div class="card" data-value="Workstation">💻 Workstation</div>
+                    <div class="card" data-value="Mixed usage">⚡ Mixed Usage</div>
+
+                </div>
+
+                <input type="hidden" name="usage">
+
+                <button type="button" onclick="nextStep()">Next</button>
+
+            </div>
+
+
+            <!-- STEP 3 -->
+
+            <div class="step">
+
+                <h2>🖥 Target Gaming Resolution</h2>
+
+                <div class="card-group">
+
+                    <div class="card" data-value="1080p gaming">1080p</div>
+                    <div class="card" data-value="1440p gaming">1440p</div>
+                    <div class="card" data-value="4k gaming">4K</div>
+
+                </div>
+
+                <input type="hidden" name="resolution">
+
+                <button type="button" onclick="nextStep()">Next</button>
+
+            </div>
+
+
+            <!-- STEP 4 -->
+
+            <div class="step">
+
+                <h2>🧠 CPU Priority</h2>
+
+                <div class="card-group">
+
+                    <div class="card" data-value="High CPU performance">🔥 High CPU</div>
+                    <div class="card" data-value="Balanced CPU">⚖ Balanced</div>
+                    <div class="card" data-value="Budget CPU">💰 Budget</div>
+
+                </div>
+
+                <input type="hidden" name="cpu_priority">
+
+                <button type="button" onclick="nextStep()">Next</button>
+
+            </div>
+
+
+            <!-- STEP 5 -->
+
+            <div class="step">
+
+                <h2>🎮 GPU Priority</h2>
+
+                <div class="card-group">
+
+                    <div class="card" data-value="High GPU performance">🔥 Maximum GPU</div>
+                    <div class="card" data-value="Balanced GPU">⚖ Balanced GPU</div>
+
+                </div>
+
+                <input type="hidden" name="gpu_priority">
+
+                <button type="button" onclick="nextStep()">Next</button>
+
+            </div>
+
+
+            <!-- STEP 6 -->
+
+            <div class="step">
+
+                <h2>🧠 RAM Requirement</h2>
+
+                <div class="card-group">
+
+                    <div class="card" data-value="16GB">16GB</div>
+                    <div class="card" data-value="32GB">32GB</div>
+                    <div class="card" data-value="64GB">64GB</div>
+
+                </div>
+
+                <input type="hidden" name="ram">
+
+                <button type="button" onclick="nextStep()">Next</button>
+
+            </div>
+
+
+            <!-- STEP 7 -->
+
+            <div class="step">
+
+                <h2>💾 Storage</h2>
+
+                <div class="card-group">
+
+                    <div class="card" data-value="1TB SSD">1TB SSD</div>
+                    <div class="card" data-value="2TB SSD">2TB SSD</div>
+                    <div class="card" data-value="4TB storage">4TB+</div>
+
+                </div>
+
+                <input type="hidden" name="storage">
+
+                <button type="button" onclick="nextStep()">Next</button>
+
+            </div>
+
+
+            <!-- STEP 8 -->
+
+            <div class="step">
+
+                <h2>❄ Cooling Preference</h2>
+
+                <div class="card-group">
+
+                    <div class="card" data-value="Air cooling">Air Cooling</div>
+                    <div class="card" data-value="Liquid cooling">Liquid Cooling</div>
+
+                </div>
+
+                <input type="hidden" name="cooling">
+
+                <button type="button" onclick="nextStep()">Next</button>
+
+            </div>
+
+
+            <!-- STEP 9 -->
+
+            <div class="step">
+
+                <h2>🖥 Case Size</h2>
+
+                <div class="card-group">
+
+                    <div class="card" data-value="Compact build">Compact</div>
+                    <div class="card" data-value="Mid tower">Mid Tower</div>
+                    <div class="card" data-value="Full tower">Full Tower</div>
+
+                </div>
+
+                <input type="hidden" name="case">
+
+                <button type="button" onclick="nextStep()">Next</button>
+
+            </div>
+
+
+            <!-- STEP 10 -->
+
+            <div class="step">
+
+                <h2>🔮 Future Upgrade Potential</h2>
+
+                <div class="card-group">
+
+                    <div class="card" data-value="Future upgrade friendly">Upgrade Friendly</div>
+                    <div class="card" data-value="No upgrade priority">No Upgrade Priority</div>
+
+                </div>
+
+                <input type="hidden" name="upgrade">
+
+                <button type="submit">Generate PC Build</button>
+
+            </div>
+
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Phone Advisor</title>
+
+    <link rel="stylesheet" href="/static/v2/phone.css">
+    <script src="/static/v2/phone.js" defer></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+
+        <form action="/analyze" method="post">
+
+            <input type="hidden" name="device" value="phone">
+
+            <!-- STEP 1 -->
+
+            <div class="step active">
+
+                <h2>💰 What's your budget?</h2>
+
+                <div class="card-group">
+
+                    <div class="card" data-value="20000">Under ₹20k</div>
+                    <div class="card" data-value="40000">₹20k - ₹40k</div>
+                    <div class="card" data-value="60000">₹40k - ₹60k</div>
+                    <div class="card" data-value="80000">₹60k - ₹80k</div>
+                    <div class="card" data-value="100000">Above ₹80k</div>
+
+                </div>
+
+                <input type="hidden" name="budget">
+
+                <button type="button" onclick="nextStep()">Next</button>
+
+            </div>
+
+
+            <!-- STEP 2 -->
+
+            <div class="step">
+
+                <h2>Choose Operating System</h2>
+
+                <div class="card-group os-group">
+
+                    <div class="card" data-value="Android">🤖 Android</div>
+                    <div class="card" data-value="iOS">🍎 iOS</div>
+
+                </div>
+
+                <input type="hidden" name="os">
+
+                <button type="button" onclick="nextStep()">Next</button>
+
+            </div>
+
+
+            <!-- STEP 3 -->
+
+            <div class="step">
+
+                <h2>🎯 Primary Usage</h2>
+
+                <div class="card-group">
+
+                    <div class="card" data-value="Gaming">🎮 Gaming</div>
+                    <div class="card" data-value="Photography">📸 Photography</div>
+                    <div class="card" data-value="Productivity">💼 Work/Productivity</div>
+                    <div class="card" data-value="Casual">📱 Casual Usage</div>
+
+                </div>
+
+                <input type="hidden" name="usage">
+
+                <button type="button" onclick="nextStep()">Next</button>
+
+            </div>
+
+            <div class="step">
+
+                <h2>⚡ Performance Priority</h2>
+
+                <div class="card-group">
+
+                    <div class="card" data-value="High gaming performance">🎮 Gaming Performance</div>
+
+                    <div class="card" data-value="Balanced performance">⚡ Balanced</div>
+
+                    <div class="card" data-value="Battery efficiency">🔋 Battery Efficiency</div>
+
+                </div>
+
+                <input type="hidden" name="performance">
+
+                <button type="button" onclick="nextStep()">Next</button>
+
+            </div>
+
+            <div class="step">
+
+                <h2>🖥 Display Preference</h2>
+
+                <div class="card-group">
+
+                    <div class="card" data-value="Compact phone">📱 Compact</div>
+
+                    <div class="card" data-value="Large display">📺 Large Screen</div>
+
+                    <div class="card" data-value="High refresh rate display">⚡ High Refresh Rate</div>
+
+                </div>
+
+                <input type="hidden" name="display">
+
+                <button type="button" onclick="nextStep()">Next</button>
+
+            </div>
+
+
+            <!-- STEP 4 -->
+
+            <div class="step">
+
+                <h2>🔋 Battery Importance</h2>
+
+                <div class="card-group">
+
+                    <div class="card" data-value="Low">Low</div>
+                    <div class="card" data-value="Medium">Medium</div>
+                    <div class="card" data-value="High">High</div>
+
+                </div>
+
+                <input type="hidden" name="battery">
+
+                <button type="button" onclick="nextStep()">Next</button>
+
+            </div>
+
+
+            <!-- STEP 5 -->
+
+            <div class="step">
+
+                <h2>📸 Camera Importance</h2>
+
+                <div class="card-group">
+
+                    <div class="card" data-value="Low">Low</div>
+                    <div class="card" data-value="Medium">Medium</div>
+                    <div class="card" data-value="High">High</div>
+
+                </div>
+
+                <input type="hidden" name="camera">
+
+                <button type="button" onclick="nextStep()">Next</button>
+
+            </div>
+
+
+            <div class="step">
+
+                <h2>Charging Preference</h2>
+
+                <div class="card-group">
+
+                    <div class="card" data-value="Ultra fast charging">⚡ Ultra Fast Charging</div>
+
+                    <div class="card" data-value="Normal charging">🔋 Normal Charging</div>
+
+                    <div class="card" data-value="Battery longevity">🪫 Battery Health Priority</div>
+
+                </div>
+
+                <input type="hidden" name="charging">
+
+                <button type="button" onclick="nextStep()">Next</button>
+
+            </div>
+
+
+            <!-- STEP 6 -->
+
+            <div class="step">
+
+                <h2>Select preferred brands</h2>
+
+                <p class="hint">You can select multiple brands</p>
+
+                <div class="card-group brand-group">
+
+                    <div class="card brand android-brand" data-value="Samsung">Samsung</div>
+                    <div class="card brand android-brand" data-value="OnePlus">OnePlus</div>
+                    <div class="card brand android-brand" data-value="Google">Google</div>
+                    <div class="card brand android-brand" data-value="Xiaomi">Xiaomi</div>
+                    <div class="card brand android-brand" data-value="Nothing">Nothing</div>
+                    <div class="card brand android-brand" data-value="Vivo">Vivo</div>
+                    <div class="card brand android-brand" data-value="Oppo">Oppo</div>
+
+                    <div class="card brand apple-brand" data-value="Apple">Apple</div>
+
+                </div>
+
+                <input type="hidden" name="brand">
+
+                <button type="submit">Get Recommendation</button>
+
+            </div>
+
+</body>
+
+</html>
